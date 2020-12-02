@@ -12,7 +12,7 @@ public class SingletonImprovedThreadSafeExample {
 	 * 
 	 */
 
-	private static SingletonImprovedThreadSafeExample instance;
+	private static volatile SingletonImprovedThreadSafeExample instance;
 
 	private SingletonImprovedThreadSafeExample() {
 	}
