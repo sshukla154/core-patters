@@ -20,6 +20,12 @@ public class SingletonExample {
 	public static SingletonExample getInstance() {
 		if (instance == null) {
 			/*
+			 * This is lazy initialization, as we are creating instance only when
+			 * getInstance() is called. to have this eagar initialization we can create its
+			 * instance while at the time of loading this class by keeping
+			 * 
+			 * private static SingletonExample instance = new SingletonExample();
+			 * 
 			 * Create instance only if instance is null else return as it is ie: Creating
 			 * only one instance
 			 */
