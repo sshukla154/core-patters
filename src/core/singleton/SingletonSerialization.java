@@ -39,5 +39,9 @@ public class SingletonSerialization implements Serializable {
 		}
 		return instance;
 	}
+	
+	protected Object readResolve() {
+		return instance;
+	}
 
 }

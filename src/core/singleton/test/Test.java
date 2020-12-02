@@ -1,9 +1,11 @@
 package core.singleton.test;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 import core.singleton.EagarSingletonExample;
@@ -12,7 +14,7 @@ import core.singleton.SingletonSerialization;
 
 public class Test {
 
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
 		SingletonExample singletonExample1 = SingletonExample.getInstance();
 		SingletonExample singletonExample2 = SingletonExample.getInstance();
 
@@ -31,10 +33,17 @@ public class Test {
 		ObjectOutputStream objectOutputStream2 = new ObjectOutputStream(
 				new FileOutputStream(new File("D:\\Code\\core-patters\\src\\core\\singleton\\singleton.txt")));
 		objectOutputStream2.writeObject(singletonSerialization2);
+		
+		SingletonSerialization singletonSerialization3 = null;
+		ObjectInputStream objectInputStream3 = new ObjectInputStream(
+				new FileInputStream(new File("D:\\Code\\core-patters\\src\\core\\singleton\\singleton.txt")));
+		singletonSerialization3 = (SingletonSerialization)objectInputStream3.readObject();
 		objectOutputStream1.close();
 		objectOutputStream2.close();
+		objectInputStream3.close();			
 
-		System.out.println(objectOutputStream1 == objectOutputStream2);
+		System.out.println(singletonSerialization1 == singletonSerialization2);
+		System.out.println(singletonSerialization1 == singletonSerialization3);
 
 	}
 
