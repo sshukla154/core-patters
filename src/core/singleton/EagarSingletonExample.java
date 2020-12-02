@@ -12,7 +12,11 @@ public class EagarSingletonExample {
 	 * 
 	 */
 
-	private static EagarSingletonExample instance = new EagarSingletonExample();
+	private static EagarSingletonExample instance;
+	
+	static {
+		instance = new EagarSingletonExample();
+	}
 
 	private EagarSingletonExample() {
 	}
