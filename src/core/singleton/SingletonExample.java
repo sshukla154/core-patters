@@ -1,6 +1,6 @@
 package core.singleton;
 
-public class DateUtil {
+public class SingletonExample {
 
 	/*
 	 * Step 1: Private constructor
@@ -12,18 +12,18 @@ public class DateUtil {
 	 * 
 	 */
 
-	private static DateUtil instance;
+	private static SingletonExample instance;
 
-	private DateUtil() {
+	private SingletonExample() {
 	}
 
-	public static DateUtil getInstance() {
+	public static SingletonExample getInstance() {
 		if (instance == null) {
 			/*
 			 * Create instance only if instance is null else return as it is ie: Creating
 			 * only one instance
 			 */
-			instance = new DateUtil();
+			instance = new SingletonExample();
 		}
 		return instance;
 	}
