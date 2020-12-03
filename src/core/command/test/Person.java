@@ -1,4 +1,9 @@
-package core.command;
+package core.command.test;
+
+import core.command.OffCommand;
+import core.command.OnCommand;
+import core.command.RemoteControl;
+import core.command.Television;
 
 /*Client*/
 public class Person {

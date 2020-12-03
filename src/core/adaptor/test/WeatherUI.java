@@ -1,4 +1,6 @@
-package core.adaptor;
+package core.adaptor.test;
+
+import core.adaptor.WeatherAdapter;
 
 public class WeatherUI {
 
